@@ -1,0 +1,141 @@
+.features-container {
+    text-align: center; /* 仅针对标题居中对齐 */
+    margin-bottom: 30px; /* 与下方内容保持一定的间距 */
+}
+
+.features-title {
+    font-size: 34px; /* 标题的字体大小 */
+    color: #000; /* 标题的颜色，黑色 */
+    font-weight: bold; /* 标题加粗 */
+    margin-bottom: 60px; /* 标题与下方内容的间距 */
+    animation: fadeInDown 0.5s ease-out; /* 标题加载动画 */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 保持两列布局 */
+    grid-row-gap: 0px; /* 控制卡片上下间距 */
+    grid-column-gap: 42px; /* 控制卡片左右间距 */
+    padding: 0; /* 移除额外的填充 */
+    margin: 0 auto; /* 居中对齐整个网格 */
+    width: 90%; /* 控制整体网格的宽度 */
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column; /* 纵向排列内容和按钮 */
+    justify-content: space-between;
+    align-items: flex-start; /* 保持内容左对齐 */
+    background-color: #ffffff; /* 默认白色背景 */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* 让卡片占满网格列 */
+    height: 250px; /* 卡片的高度 */
+    position: relative; /* 相对定位以正确放置按钮 */
+    animation: fadeIn 0.7s ease-out; /* 卡片加载动画 */
+}
+
+.feature-card:nth-child(2),
+.feature-card:nth-child(3) {
+    background-color: #f7ebff; /* 第二和第三个卡片使用浅紫色背景 */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02); /* 悬停时向上移动并放大 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-content {
+    max-width: 100%; /* 使用内容的全部宽度 */
+    text-align: left; /* 确保卡片内文字左对齐 */
+}
+
+.feature-icon {
+    width: 90px; /* 更大的图片尺寸 */
+    margin-bottom: 10px;
+    animation: rotateIn 0.5s ease-out; /* 图标加载动画 */
+}
+
+.feature-arrow {
+    position: absolute; /* 绝对定位以在右下角放置按钮 */
+    bottom: 20px; /* 距离底部的距离 */
+    right: 20px; /* 距离右边的距离 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4b0082; /* 深紫色背景 */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* 添加放大效果 */
+}
+
+.arrow-circle:hover {
+    background-color: #330066; /* 悬停时的深色紫色 */
+    transform: scale(1.1); /* 悬停时的放大效果 */
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    text-align: left; /* 确保标题左对齐 */
+    transition: color 0.3s; /* 添加颜色变化过渡 */
+}
+
+.feature-card:hover h3 {
+    color: #4b0082; /* 悬停时标题颜色变化 */
+}
+
+.feature-card p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    text-align: left; /* 确保描述文字左对齐 */
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-180deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
